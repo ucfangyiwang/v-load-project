@@ -1,5 +1,6 @@
 import { FaUser } from "react-icons/fa";
-
+import React from 'react';
+import {Link} from 'react-router-dom';
 function Header(){
     return(
         <div>
@@ -17,13 +18,14 @@ function Header(){
         
       </label>
       <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
-        <li>
-          <a >
+       <li>
+        <Link to="/signin">
             Sign in
-          </a>
+        </Link>
         </li>
-    
-        <li><a>Sign up</a></li>
+        <li>   <Link to="/signup">
+            Sign up
+        </Link></li>
       </ul>
     </div>
   </div>

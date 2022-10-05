@@ -10,7 +10,9 @@ import Header from './component/Header';
 function App() {
   return(
     <>
+    
     <Router>
+    <Header/>
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/tracking' element={<Tracking/>}/>
@@ -19,7 +21,7 @@ function App() {
         <Route path='/signin' element={<SignIn/>}/>
         <Route path='/signup' element={<SignUp/>}/>
       </Routes>
-      <Header/>
+      
     </Router>
     </>
   )
