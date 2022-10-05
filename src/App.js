@@ -1,8 +1,28 @@
-import logo from "./logo.svg";
-import "./App.css";
+import {BrowserRouter as Router,Routes,Route}from 'react-router-dom'
+import Home from './pages/Home';
+import Tracking from './pages/Tracking';
+import ForgetPassword from './pages/ForgetPassword';
+import Profile from './pages/Profile';
+import SignIn from './pages/SignIn';
+import SignUp from './pages/SignUp';
+import Header from './component/Header';
 
 function App() {
-  return <div className="App"></div>;
+  return(
+    <>
+    <Router>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/tracking' element={<Tracking/>}/>
+        <Route path='/profile' element={<Profile/>}/>
+        <Route path='/forgetpassword' element={<ForgetPassword/>}/>
+        <Route path='/signin' element={<SignIn/>}/>
+        <Route path='/signup' element={<SignUp/>}/>
+      </Routes>
+      <Header/>
+    </Router>
+    </>
+  )
 }
 
 export default App;
