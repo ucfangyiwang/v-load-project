@@ -10,6 +10,22 @@ function Header() {
             <a className="btn btn-ghost normal-case text-3xl">V-load</a>
           </Link>
         </div>
+
+        <div className="dropdown dropdown-end">
+        <label tabIndex={0} className="btn btn-ghost rounded-btn">Dropdown</label>
+        <ul tabIndex={0} className="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4">
+          <li><a>Item 1</a></li> 
+          <li><a>Item 2</a></li>
+        </ul>
+      </div>
+      <div className="dropdown dropdown-end">
+        <label tabIndex={0} className="btn btn-ghost rounded-btn">Dropdown</label>
+        <ul tabIndex={0} className="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4">
+          <li><a>Item 1</a></li> 
+          <li><a>Item 2</a></li>
+        </ul>
+      </div>
+
         <div className="flex-none gap-2">
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle ">

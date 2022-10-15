@@ -10,12 +10,13 @@ function Profile() {
     name: auth.currentUser.displayName,
     email: auth.currentUser.email,
   });
-}
+
 const { name, email } = formData;
 const navigate = useNavigate();
 const Logout = () => {
   auth.signOut();
   navigate("/");
 };
-return <div></div>;
+return <div> </div>;
+}
 export default Profile;
