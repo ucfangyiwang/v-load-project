@@ -1,13 +1,16 @@
 import { useState } from "react";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import {
   getAuth,
   createUserWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
+import { setDoc, doc, serverTimestamp } from "firebase/firestore";
 import { db } from "../firebase.config";
-import { Navigate } from "react-router-dom";
+
 function SignUp() {
+  const navigate = useNavigate();
   const [passwordcheck, setpasswordcheck] = useState(true);
   const [formData, steformData] = useState({
     nmae: "",
@@ -41,7 +44,13 @@ function SignUp() {
       const user = userCredential.user;
       updateProfile(auth.currentUser, { displayName: name });
       alert("register successful");
-      Navigate("/");
+
+      const formDatacopy = { ...formData };
+      delete formDatacopy.password;
+      formDatacopy.timestamp = serverTimestamp();
+
+      await setDoc(doc(db, "user", user.uid), formDatacopy);
+      navigate("/");
     } catch (error) {
       if (error.code === "auth/email-already-in-use") {
         alert("Cannot create user, email already in use");

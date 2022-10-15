@@ -1,8 +1,10 @@
-function Home(){
-return(
+import { Link } from "react-router-dom";
+
+function Home() {
+  return (
     <div>
-        <h1></h1>
+   
     </div>
-)
+  );
 }
-export default Home
+export default Home;
