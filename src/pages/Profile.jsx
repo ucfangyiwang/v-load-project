@@ -11,12 +11,13 @@ function Profile() {
     email: auth.currentUser.email,
   });
 
-const { name, email } = formData;
-const navigate = useNavigate();
-const Logout = () => {
-  auth.signOut();
-  navigate("/");
-};
-return <div> </div>;
+  const { name, email } = formData;
+  const navigate = useNavigate();
+  const Logout = () => {
+    auth.signOut();
+    navigate("/");
+  };
+
+  return <div>this is the Profile Page</div>;
 }
 export default Profile;

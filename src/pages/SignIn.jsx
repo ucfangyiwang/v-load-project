@@ -28,7 +28,7 @@ function SignIn() {
         password
       );
       if (userCredential.user) {
-        navigate("/profile");
+        navigate("/");
       }
     } catch (error) {
       alert("username or password is wrong");

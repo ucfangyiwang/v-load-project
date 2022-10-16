@@ -44,13 +44,11 @@ function SignUp() {
       const user = userCredential.user;
       updateProfile(auth.currentUser, { displayName: name });
       alert("register successful");
-
+      navigate("/");
       const formDatacopy = { ...formData };
       delete formDatacopy.password;
       formDatacopy.timestamp = serverTimestamp();
-
       await setDoc(doc(db, "user", user.uid), formDatacopy);
-      navigate("/");
     } catch (error) {
       if (error.code === "auth/email-already-in-use") {
         alert("Cannot create user, email already in use");
