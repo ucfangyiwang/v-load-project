@@ -4,7 +4,7 @@ import customerImage from "../picture/driver.jpg";
 function Home() {
   return (
     <div>
-      <div className="h-4/5 pt-36 gap-32 flex flex-wrap justify-center ">
+      <div className=" pt-36 gap-32 flex flex-wrap justify-center ">
         <div className="card card-compact w-96 bg-base-100 shadow-xl">
           <figure>
             <img src={driverImage} alt="Shoes" />
