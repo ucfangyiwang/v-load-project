@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Maps from "./Tracking"
 import driverImage from "../picture/customer.jpg";
 import customerImage from "../picture/driver.jpg";
 function Home() {
@@ -34,6 +35,8 @@ function Home() {
             </div>
           </div>
         </div>
+
+        <div><Maps/></div>
       </div>
     </div>
   );
