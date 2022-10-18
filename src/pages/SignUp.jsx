@@ -48,7 +48,7 @@ function SignUp() {
       const formDatacopy = { ...formData };
       delete formDatacopy.password;
       formDatacopy.timestamp = serverTimestamp();
-      await setDoc(doc(db, "user", user.uid), formDatacopy);
+      await setDoc(doc(db, "users", user.uid), formDatacopy);
     } catch (error) {
       if (error.code === "auth/email-already-in-use") {
         alert("Cannot create user, email already in use");

@@ -11,13 +11,22 @@ function Profile() {
     email: auth.currentUser.email,
   });
 
-  const { name, email } = formData;
-  const navigate = useNavigate();
-  const Logout = () => {
-    auth.signOut();
-    navigate("/");
-  };
-
-  return <div>this is the Profile Page</div>;
+  return (
+    <div>
+      <header className="flex justify-center align-center text-2xl pt-36">
+        <p className="pageheader">My detail</p>
+      </header>
+      <main className="flex justify-center align-center text-xl ">
+        <div className="flex flex-col w-full border-opacity-50">
+          <div className="grid h-20 card bg-base-300 rounded-box place-items-center">
+            name:{auth.currentUser.displayName}
+          </div>
+          <div className="grid h-20 card bg-base-300 rounded-box place-items-center">
+            e-mail:{auth.currentUser.email}
+          </div>
+        </div>
+      </main>
+    </div>
+  );
 }
 export default Profile;
