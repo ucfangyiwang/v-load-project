@@ -266,7 +266,7 @@ function App() {
                     title={<FaCarSide className="text-6xl" />}
                     bordered={false}
                   >
-                    Car:${parseInt((number + 10) * 0.7)}
+                    Car:${parseInt((number + 10) * 0.7+15)}
                   </Card>
                 </Col>
                 <Col span={8}>
@@ -274,7 +274,7 @@ function App() {
                     title={<FaShuttleVan className="text-6xl" />}
                     bordered={false}
                   >
-                    Van:${parseInt((number + 20) * 1)}
+                    Van:${parseInt((number + 20) * 1 +25)}
                   </Card>
                 </Col>
                 <Col span={8}>
@@ -282,7 +282,7 @@ function App() {
                     title={<FaTruck className="text-6xl" />}
                     bordered={false}
                   >
-                    Truck:${parseInt((number + 40) * 1.2)}
+                    Truck:${parseInt((number + 40) * 1.2+55)}
                   </Card>
                 </Col>
               </Row>
@@ -298,9 +298,10 @@ function App() {
             </select>
             <br/>
             <div className=" flex jusitfy-center">
-              <br></br>
+              
               <button class="btn btn-success" >Submit</button>
             </div>
+            <div className="flex justify-center"> </div>
           </div>
         ) : (
           <></>
