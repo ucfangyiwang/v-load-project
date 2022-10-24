@@ -7,6 +7,7 @@ import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import Header from "./component/Header";
 import Footer from "./component/Footer";
+import List from "./pages/List"
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/forgetpassword" element={<ForgetPassword />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/List" element={<List/>}/>
         </Routes>
         <Footer />
       </Router>

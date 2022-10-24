@@ -9,6 +9,8 @@ import {
   SkeletonText,
   Text,
 } from "@chakra-ui/react";
+import ReactHtmlParser from 'html-react-parser';
+import { Link } from "react-router-dom";
 import { FaLocationArrow, FaTimes } from "react-icons/fa";
 import "antd/dist/antd.css";
 import { FaCarSide } from "react-icons/fa";
@@ -44,7 +46,7 @@ function App() {
   const [Reserve, setReserve] = useState(false);
   const originRef = useRef();
   const destiantionRef = useRef();
-
+ 
   const picjUpNow = () => {};
 
   if (!isLoaded) {
@@ -136,7 +138,7 @@ function App() {
               <Autocomplete>
                 <Input
                   type="text"
-                  placeholder="drop up location"
+                  placeholder="drop off location"
                   ref={destiantionRef}
                 />
               </Autocomplete>
@@ -208,7 +210,7 @@ function App() {
                     title={<FaCarSide className="text-6xl" />}
                     bordered={false}
                   >
-                    Car:${(number + 10) * 0.7}
+                    Car:${parseInt((number + 10) * 0.7)}
                   </Card>
                 </Col>
                 <Col span={8}>
@@ -216,7 +218,7 @@ function App() {
                     title={<FaShuttleVan className="text-6xl" />}
                     bordered={false}
                   >
-                    Van:${(number + 20) * 1}
+                    Van:${parseInt((number + 20) * 1)}
                   </Card>
                 </Col>
                 <Col span={8}>
@@ -224,11 +226,12 @@ function App() {
                     title={<FaTruck className="text-6xl" />}
                     bordered={false}
                   >
-                    Truck:${(number + 40) * 1.2}
+                    Truck:${parseInt((number + 40) * 1.2)}
                   </Card>
                 </Col>
               </Row>
             </div>
+            {ReactHtmlParser('<br/>')}
             <select className="select select-bordered w-full max-w-xs">
               <option disabled selected>
                 which type of car do you want
@@ -243,6 +246,7 @@ function App() {
           <></>
         )}{" "}
       </div>
+      {ReactHtmlParser('<br>')}
       <div>
         {Reserve ? (
           <div className="flex justify-center">
@@ -254,6 +258,7 @@ function App() {
                 showTime={{ defaultValue: moment("00:00:00", "HH:mm:ss") }}
               />
             </Space>
+            {ReactHtmlParser('<br/>')}
             <div className="site-card-wrapper">
               <Row gutter={16}>
                 <Col span={8}>
@@ -261,7 +266,7 @@ function App() {
                     title={<FaCarSide className="text-6xl" />}
                     bordered={false}
                   >
-                    Car:${(number + 10) * 0.7}
+                    Car:${parseInt((number + 10) * 0.7)}
                   </Card>
                 </Col>
                 <Col span={8}>
@@ -269,7 +274,7 @@ function App() {
                     title={<FaShuttleVan className="text-6xl" />}
                     bordered={false}
                   >
-                    Van:${(number + 20) * 1}
+                    Van:${parseInt((number + 20) * 1)}
                   </Card>
                 </Col>
                 <Col span={8}>
@@ -277,11 +282,12 @@ function App() {
                     title={<FaTruck className="text-6xl" />}
                     bordered={false}
                   >
-                    Truck:${(number + 40) * 1.2}
+                    Truck:${parseInt((number + 40) * 1.2)}
                   </Card>
                 </Col>
               </Row>
             </div>
+            {ReactHtmlParser('<br/>')}
             <select className="select select-bordered w-full max-w-xs">
               <option disabled selected>
                 which type of car do you want
@@ -290,8 +296,10 @@ function App() {
               <option>Van</option>
               <option>Truck</option>
             </select>
+            <br/>
             <div className=" flex jusitfy-center">
-              <button class="btn btn-success">Submit</button>
+              <br></br>
+              <button class="btn btn-success" >Submit</button>
             </div>
           </div>
         ) : (
