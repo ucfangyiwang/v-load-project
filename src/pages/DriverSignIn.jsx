@@ -1,24 +1,27 @@
-import { useState , useEffect} from "react";
+import { useState } from "react";
 import React from "react";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { async } from "@firebase/util";
 
-function SignIn() {
 
+function DriverSignIn() {
   const [formData, steformData] = useState({
     email: "",
     password: "",
   });
+
   const { email, password } = formData;
+
   const onChange = (e) => {
     steformData((prevState) => ({
       ...prevState,
       [e.target.id]: e.target.value,
     }));
   };
+
   const navigate = useNavigate();
+  
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -38,7 +41,7 @@ function SignIn() {
   return (
     <div>
       <header className="flex justify-center align-center text-3xl pt-36">
-        <p className="pageheader">welcome back!</p>
+        <p className="pageheader">Driver Login!</p>
       </header>
       <div className="py-16  flex justify-center align-center">
         <form className="w-72 " onSubmit={onSubmit}>
@@ -72,4 +75,4 @@ function SignIn() {
     </div>
   );
 }
-export default SignIn;
+export default DriverSignIn;

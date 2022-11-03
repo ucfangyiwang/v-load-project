@@ -6,19 +6,17 @@ import {
   createUserWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
-import "firebase/firestore";
 import { setDoc, doc, serverTimestamp } from "firebase/firestore";
 import { db } from "../firebase.config";
 
-function SignUp() {
+function DriverSignUp() {
   const navigate = useNavigate();
-
   const [passwordcheck, setpasswordcheck] = useState(true);
   const [formData, steformData] = useState({
     nmae: "",
     email: "",
+    role:"driver",
     password: "",
-    role:"customer",
     confirmpassword: "",
   });
   const { name, email,role, password, confirmpassword } = formData;
@@ -43,7 +41,7 @@ function SignUp() {
         auth,
         email,
         role,
-        password,
+        password
       );
       const user = userCredential.user;
       updateProfile(auth.currentUser, { displayName: name });
@@ -65,7 +63,7 @@ function SignUp() {
   return (
     <div>
       <header className="flex justify-center align-center text-3xl pt-36">
-        <p className="pageheader">welcome join v-load!</p>
+        <p className="pageheader">welcome join v-load Driver!</p>
       </header>
       <div className="py-16  flex justify-center align-center">
         <form className="w-72 " onSubmit={onSubmit}>
@@ -114,4 +112,4 @@ function SignUp() {
     </div>
   );
 }
-export default SignUp;
+export default DriverSignUp;

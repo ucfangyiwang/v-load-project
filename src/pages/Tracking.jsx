@@ -231,7 +231,7 @@ function App() {
                 </Col>
               </Row>
             </div>
-            {ReactHtmlParser('<br/>')}
+         
             <select className="select select-bordered w-full max-w-xs">
               <option disabled selected>
                 which type of car do you want
@@ -246,7 +246,7 @@ function App() {
           <></>
         )}{" "}
       </div>
-      {ReactHtmlParser('<br>')}
+ 
       <div>
         {Reserve ? (
           <div className="flex justify-center">
@@ -258,7 +258,7 @@ function App() {
                 showTime={{ defaultValue: moment("00:00:00", "HH:mm:ss") }}
               />
             </Space>
-            {ReactHtmlParser('<br/>')}
+           
             <div className="site-card-wrapper">
               <Row gutter={16}>
                 <Col span={8}>
@@ -287,7 +287,7 @@ function App() {
                 </Col>
               </Row>
             </div>
-            {ReactHtmlParser('<br/>')}
+           
             <select className="select select-bordered w-full max-w-xs">
               <option disabled selected>
                 which type of car do you want

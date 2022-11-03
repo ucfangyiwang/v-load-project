@@ -57,10 +57,10 @@ function Header() {
             className="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4"
           >
             <li>
-              <Link to="/signin">Driver Sign In</Link>
+              <Link to="/driverSignIn">Driver Sign In</Link>
             </li>
             <li>
-              <Link to="/signup">Driver Sign Up</Link>
+              <Link to="/driverSignUp">Driver Sign Up</Link>
             </li>
           </ul>
         </div>
@@ -81,7 +81,7 @@ function Header() {
                   <Link to="/profile">Profile</Link>
                 </li>
                 <li>
-                  <button onClick={logOut}>Log out</button>
+                  <Link to="/" onClick={logOut}>Log out</Link>
                 </li>
               </ul>
             </div>
